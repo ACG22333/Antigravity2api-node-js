@@ -10,6 +10,7 @@ services:
       - PANEL_USER=admin
       - PANEL_PASSWORD=设置你的密码
       - API_KEY=sk-text
+      - IMAGE_BASE_URL=设置图像访问地址，如果是服务器部署有域名写域名，无域名写IP:8045，本地不写
     volumes:
       - ./data:/app/data
     healthcheck:

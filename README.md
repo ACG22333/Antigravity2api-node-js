@@ -19,22 +19,18 @@
 
 ~~~yml
 version: '3.8'
-networks:
-  1panel-network:
-    external: true
 services:
   antigravity-api:
     image: ghcr.io/zhongruan0522/antigravity2api-node-js:latest
     container_name: antigravity-api
     restart: unless-stopped
-    networks:
-      - 1panel-network
     ports:
       - "8045:8045"
     environment:
       - PANEL_USER=admin
       - PANEL_PASSWORD=设置你的密码
       - API_KEY=sk-text
+      - IMAGE_BASE_URL=设置图像访问地址，如果是服务器部署有域名写域名，无域名写IP:8045，本地不写
     volumes:
       - ./data:/app/data
     healthcheck:
